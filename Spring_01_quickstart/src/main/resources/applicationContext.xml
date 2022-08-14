@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean标签标示配置bean，id属性标示给bean起名字，class属性表示给bean定义类型 -->
+
+    <!-- name:为bean指定别名，别名可以有多个，使用逗号，分号，空格进行分隔 -->
+    <bean id="bookDao" name="dao" class="com.migufun.dao.BookDaoImpl"/>
+    <bean id="bookService" name="service" class="com.migufun.service.BookServiceImpl">
+        <!-- 配置server与dao的关系 -->
+        <!-- property标签表示配置当前bean的属性，name属性表示配置哪一个具体的属性，ref属性表示参照哪一个bean -->
+        <property name="bookDao" ref="bookDao"/>
+    </bean>
+
+
+</beans>
