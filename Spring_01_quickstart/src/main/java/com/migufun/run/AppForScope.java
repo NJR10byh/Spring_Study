@@ -1,4 +1,4 @@
-package com.migufun;
+package com.migufun.run;
 
 import com.migufun.dao.BookDao;
 import org.springframework.context.ApplicationContext;
