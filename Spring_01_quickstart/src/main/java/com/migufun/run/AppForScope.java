@@ -7,7 +7,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 /**
  * @author NJR10byh
  * @date 2022/8/14 23:47:03
- * @description 测试 bean 别名配置
+ * @description 测试 bean scope配置
  */
 public class AppForScope {
     public static void main(String[] args) {
