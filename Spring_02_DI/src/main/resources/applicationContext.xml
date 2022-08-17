@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="BookDao" class="com.migufun.Impl.BookDaoImpl">
+        <!-- 简单数据类型的注入 -->
+        <property name="count" value="10"></property>
+        <property name="name" value="《毛泽东精选》"></property>
+    </bean>
+    <bean id="UserDao" class="com.migufun.Impl.UserDaoImpl"/>
+
+    <bean id="BookService" class="com.migufun.Impl.BookServiceImpl">
+        <!-- 引用数据类型的注入 -->
+        <property name="bookDao" ref="BookDao"></property>
+    </bean>
+    <bean id="UserService" class="com.migufun.Impl.UserServiceImpl">
+        <property name="userDao" ref="UserDao"></property>
+    </bean>
+</beans>
