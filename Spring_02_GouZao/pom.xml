@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.migufun</groupId>
-    <artifactId>Spring_02_DI</artifactId>
+    <artifactId>Spring_02_GouZao</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>

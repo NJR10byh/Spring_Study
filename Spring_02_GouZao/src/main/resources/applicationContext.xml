@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="BookDao" class="com.migufun.Impl.BookDaoImpl">
+        <constructor-arg name="count" value="10"></constructor-arg>
+        <constructor-arg name="name" value="njr10byh"></constructor-arg>
+    </bean>
+    <bean id="UserDao" class="com.migufun.Impl.UserDaoImpl"></bean>
+
+    <bean id="BookService" class="com.migufun.Impl.BookServiceImpl">
+        <!-- 引用数据类型的注入 -->
+        <!-- name属性对应的值为构造函数中方法形参的参数名，必须要保持一致 -->
+        <!-- ref属性指向的是spring的IOC容器中其他bean对象 -->
+        <constructor-arg name="bookDao" ref="BookDao"/>
+        <constructor-arg name="userDao" ref="UserDao"/>
+    </bean>
+    <bean id="UserService" class="com.migufun.Impl.UserServiceImpl">
+        <property name="userDao" ref="UserDao"></property>
+    </bean>
+</beans>
