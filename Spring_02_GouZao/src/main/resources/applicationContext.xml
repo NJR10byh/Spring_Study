@@ -4,6 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="BookDao" class="com.migufun.Impl.BookDaoImpl">
+        <!-- 构造器注入简单数据类型 -->
         <constructor-arg name="count" value="10"></constructor-arg>
         <constructor-arg name="name" value="njr10byh"></constructor-arg>
     </bean>

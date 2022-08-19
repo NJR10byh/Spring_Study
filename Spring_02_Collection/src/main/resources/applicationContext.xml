@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="bookDao" class="com.migufun.Impl.BookDaoImpl">
+        <!-- setter注入集合 -->
+
+        <!-- 注入数组类型数据 -->
+        <property name="array">
+            <array>
+                <value>100</value>
+                <value>200</value>
+                <value>300</value>
+            </array>
+        </property>
+
+        <!-- 注入List类型数据 -->
+        <property name="list">
+            <list>
+                <value>migu</value>
+                <value>fun</value>
+                <value>TVService</value>
+            </list>
+        </property>
+
+        <!-- 注入Set类型数据 -->
+        <property name="set">
+            <set>
+                <value>migu</value>
+                <value>fun</value>
+                <value>TVService</value>
+            </set>
+        </property>
+
+        <!-- 注入Map类型数据 -->
+        <property name="map">
+            <map>
+                <entry key="country" value="China"/>
+                <entry key="province" value="JiangSu"/>
+                <entry key="city" value="NanJing"/>
+            </map>
+        </property>
+
+        <!-- 注入Properties类型数据 -->
+        <property name="properties">
+            <props>
+                <prop key="country">China</prop>
+                <prop key="province">JiangSu</prop>
+                <prop key="city">NanJing</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- 构造器注入集合 -->
+    <!--    <bean name="bookDao" class="com.migufun.Impl.BookDaoImpl">-->
+    <!--        <constructor-arg name="list">-->
+    <!--            <list>-->
+    <!--                <value>constructor</value>-->
+    <!--                <value>migu</value>-->
+    <!--                <value>fun</value>-->
+    <!--                <value>TVService</value>-->
+    <!--            </list>-->
+    <!--        </constructor-arg>-->
+    <!--    </bean>-->
+
+    <bean name="bookService" class="com.migufun.Impl.BookServiceImpl">
+        <property name="bookDao" ref="bookDao"></property>
+    </bean>
+
+</beans>
